@@ -1,13 +1,13 @@
 # GitHub Image Preview
 
-A dependency-free Chrome Manifest V3 extension that opens eligible images in an accessible in-page viewer instead of navigating away. It also works in Brave.
+A dependency-free Chrome Manifest V3 extension that opens eligible images on GitHub in an accessible in-page viewer instead of navigating away. It also works in Brave.
 
 ## Install in Brave
 
 1. Open `brave://extensions`.
 2. Turn on **Developer mode**.
 3. Select **Load unpacked** and choose this project's `extension` directory.
-4. Visit or reload a page containing an eligible image.
+4. Visit or reload a page on `https://github.com` containing an eligible image.
 
 ## Use
 
@@ -21,8 +21,8 @@ While the gallery is open, it preloads and decodes up to **five images ahead and
 
 The gallery collects unique, previewable images in page order when you open it, including images below the fold. Hidden images, avatars, logos, controls, and unrelated linked cards are skipped. It only uses image URLs already present on the current page; it does not crawl linked pages or scroll to load more results. Reopen the gallery after the page adds more images to include them.
 
-The extension handles GitHub Markdown images, direct image links, and unlinked content images on HTTP and HTTPS pages. For linked images, it intercepts only image-like targets (including GitHub blob images and GitHub asset, user-attachment, and camo URLs), so linked cards and other non-image links keep their normal behavior. It ignores modified, middle, and right clicks, plus images inside interactive controls and common avatar, profile, navigation, and logo areas.
+The extension handles GitHub Markdown images, direct image links, and unlinked content images on `https://github.com` pages. For linked images, it intercepts only image-like targets (including GitHub blob images and GitHub asset, user-attachment, and camo URLs), so linked cards and other non-image links keep their normal behavior. It ignores modified, middle, and right clicks, plus images inside interactive controls and common avatar, profile, navigation, and logo areas.
 
 ## Privacy
 
-The extension runs on HTTP and HTTPS websites so it can intercept image clicks. It has no background service worker, remote dependencies, tracking, or uploads. While the viewer is open, it loads the selected image and nearby gallery images directly from their existing hosts. If a URL fails, the viewer tries the currently displayed image URL. It cannot run on browser settings pages or the Chrome Web Store.
+The extension runs only on `https://github.com/*` so it can intercept image clicks on GitHub. It has no background service worker, remote dependencies, tracking, or uploads. While the viewer is open, it loads the selected image and nearby gallery images directly from their existing hosts. If a URL fails, the viewer tries the currently displayed image URL.

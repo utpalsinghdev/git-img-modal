@@ -2,12 +2,12 @@
   "manifest_version": 3,
   "name": "GitHub Image Preview",
   "version": "1.2.0",
-  "description": "Browse images on the current page in a popup gallery with arrow-key navigation.",
+  "description": "Browse images on GitHub in a popup gallery with arrow-key navigation.",
   "permissions": [],
   "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": ["https://github.com/*"],
       "js": ["content.js"],
       "run_at": "document_start"
     }
